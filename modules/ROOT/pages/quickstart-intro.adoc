@@ -1,0 +1,24 @@
+:title: Quick Start Tutorial
+:type: quickStart
+:level: intro
+:section: quickStart
+:parent: na
+:status: published
+:summary: Installation of an example instance.
+:order: 00
+
+== {title}
+
+This quick tutorial will enable install, configuring and using a basic instance of {branding}.
+
+[NOTE]
+====
+This tutorial is intended for setting up a test, demonstration, or trial installation of {branding}.
+For complete installation and configuration steps, see xref:managing:installing.adoc[Installing].
+====
+
+These steps will demonstrate:
+
+- [*] xref:quickstart-installing.adoc#_quick_install_prerequisites[Prerequisites].
+- [*] xref:quickstart-installing.adoc#_quick_install_of_ddf[Quick Install of {branding}].
+- [*] xref:quickstart-ingesting.adoc[Ingesting Data].

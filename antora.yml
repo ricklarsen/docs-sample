@@ -1,6 +1,6 @@
-name: Documentation
+name: quickstart 
 version: 0.1
-title: Documentation
-start_page: quickstart:quickstart-intro.adoc 
+title: Quick Start
+start_page: ROOT:quickstart-intro.adoc 
 nav: 
 - modules/ROOT/nav.adoc

@@ -9,30 +9,30 @@
 
 == Certificates (Quick Start)
 
-${branding} comes with a default keystore that contains certificates.
+{branding} comes with a default keystore that contains certificates.
 This allows the distribution to be unzipped and run immediately.
-If these certificates are sufficient for testing purposes, proceed to <<{quickstart-prefix}configuring_quick_start,Configuring (Quick Start)>>.
+If these certificates are sufficient for testing purposes, proceed to xref:quickstart-configuring.adoc[Configuring (Quick Start)].
 
-To test federation using 2-way TLS, the default keystore certificates will need to be replaced, using either the included <<{quickstart-prefix}demo_certificate_authority_ca,Demo Certificate Authority>> or by <<{quickstart-prefix}creating_self_signed_certificates,Creating Self-signed Certificates>>.
+To test federation using 2-way TLS, the default keystore certificates will need to be replaced, using either the included xref:#_demo_certificate_authority_ca[Demo Certificate Authority] or by xref:#_creating_self_signed_certificates[Creating Self-signed Certificates].
 
-If the installer was used to install the ${branding} and a hostname other than "localhost" was given, the user will be prompted to upload new trust/key stores.
+If the installer was used to install the {branding} and a hostname other than "localhost" was given, the user will be prompted to upload new trust/key stores.
 
-If the hostname is `localhost` or, if the hostname was changed _after_ installation, the default certificates will not allow access to the ${branding} instance from another machine over HTTPS (now the default for many services).
-The Demo Certificate Authority will need to be replaced with certificates that use the fully-qualified hostname of the server running the ${branding} instance.
+If the hostname is `localhost` or, if the hostname was changed _after_ installation, the default certificates will not allow access to the {branding} instance from another machine over HTTPS (now the default for many services).
+The Demo Certificate Authority will need to be replaced with certificates that use the fully-qualified hostname of the server running the {branding} instance.
 
 === Demo Certificate Authority (CA)
 
-${branding} comes with a populated truststore containing entries for many public certificate authorities, such as Go Daddy and Verisign.
-It also includes an entry for the ${ddf-branding} Demo Root CA.
+{branding} comes with a populated truststore containing entries for many public certificate authorities, such as Go Daddy and Verisign.
+It also includes an entry for the {ddf-branding} Demo Root CA.
 This entry is a self-signed certificate used for testing.
-It enables ${branding} to run immediately after unzipping the distribution.
-The keys and certificates for the ${ddf-branding} Demo Root CA are included as part of the ${branding} distribution.
-This entry must be removed from the truststore before ${branding} can operate securely.
+It enables {branding} to run immediately after unzipping the distribution.
+The keys and certificates for the {ddf-branding} Demo Root CA are included as part of the {branding} distribution.
+This entry must be removed from the truststore before {branding} can operate securely.
 
 ==== Creating New Server Keystore Entry with the CertNew Scripts
 
 To create a private key and certificate signed by the Demo Certificate Authority, use the provided scripts.
-To use the scripts, run them out of the `${home_directory}/etc/certs` directory.
+To use the scripts, run them out of the `{home_directory}/etc/certs` directory.
 
 
 .*NIX Demo CA Script
@@ -83,9 +83,9 @@ The `CertNew` scripts:
 * Adds the specified subject alternative names if any.
 * Use the Demo Certificate Authority to sign the certificate so that it will be trusted by the default configuration.
 
-To install a certificate signed by a different Certificate Authority, see <<{managing-prefix}managing_keystores,Managing Keystores>>.
+To install a certificate signed by a different Certificate Authority, see xref:managing-keystores.adoc[Managing Keystores].
 
-After this proceed to <<{quickstart-prefix}updating_settings_after_changing_certificates,Updating Settings After Changing Certificates>>.
+After this proceed to xref:#_updating_settings_after_changing_certificates[Updating Settings After Changing Certificates].
 
 [WARNING]
 ====
@@ -112,7 +112,7 @@ From ${home_directory}/etc/certs/ run:
 `CertNew -cn <IP> -san "IP:<IP>"`
 ****
 
-After this proceed to <<{quickstart-prefix}updating_settings_after_changing_certificates,Updating Settings After Changing Certificates>>, and be sure to use the IP address instead of the FQDN.
+After this proceed to xref:#_updating_settings_after_changing_certificatee,Updating Settings After Changing Certificates>>, and be sure to use the IP address instead of the FQDN.
 
 === Creating Self-Signed Certificates
 
@@ -126,9 +126,9 @@ This includes commands and tools that can be used to perform these operations.
 For this example, the following tools are used:
 
 * openssl
-** Windows users can use: https://code.google.com/p/openssl-for-windows/downloads/detail?name=openssl-0.9.8k_X64.zip&can=2&q=[openssl] for windows.
-* The standard Java http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html[keytool] certificate management utility.
-* http://portecle.sourceforge.net/[Portecle] can be used for *keytool* operations if a GUI if preferred over a command line interface.
+** Windows users can use: https://code.google.com/p/openssl-for-windows/downloads/detail?name=openssl-0.9.8k_X64.zip&can=2&q=[openssl] {external-link} for Windows.
+* The standard Java http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html[keytool] {external-link} certificate management utility.
+* http://portecle.sourceforge.net/[Portecle] {external-link} can be used for *keytool* operations if a GUI if preferred over a command line interface.
 
 ==== Creating a custom CA Key and Certificate
 
@@ -156,12 +156,12 @@ After changing the certificates it will be necessary to update the system user a
 
 FQDNs should be used wherever possible. In the absence of DNS, however, IP addresses can be used.
 
-Replace `localhost` with the FQDN or the IP in `${home_directory}/etc/users.properties`, `${home_directory}/etc/users.attributes`, and `${home_directory}/etc/custom.system.properties`.
+Replace `localhost` with the FQDN or the IP in `{home_directory}/etc/users.properties`, `{home_directory}/etc/users.attributes`, and `${home_directory}/etc/custom.system.properties`.
 
 [TIP]
 ====
 On linux this can be accomplished with a single command:
-`sed -i 's/localhost/<FQDN|IP>/g' ${home_directory}/etc/users.* ${home_directory}/etc/custom.system.properties`
+`sed -i 's/localhost/<FQDN|IP>/g' {home_directory}/etc/users.* {home_directory}/etc/custom.system.properties`
 ====
 
-Finally, restart the ${branding} instance. Navigate to the ${admin-console} to test changes.
+Finally, restart the {branding} instance. Navigate to the {admin-console} to test changes.

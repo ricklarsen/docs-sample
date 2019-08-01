@@ -1,3 +1,11 @@
-Welcome
+.Quick Start
 
-- test nave page
+** xref:quickstart-intro.adoc[introduction]
+** xref:quickstart-certificates.adoc[Demo Certificates]
+** xref:quickstart-installing.adoc[Quick Installation]
+** xref:quickstart-configuring.adoc[Quick Configuration]
+** xref:quickstart-ingesting.adoc[Ingesting Sample Data]
+
+.Library
+
+*  xref:using::using-intrigue-intro.adoc[Using {branding}]
